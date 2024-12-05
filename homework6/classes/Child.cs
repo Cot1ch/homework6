@@ -5,11 +5,14 @@ namespace homework6
 
     internal class Child : Person
     {
+        #region Fields
         private double _Weight;
         private double _Height;
         private string _FirstWord;
         private string _SecondWord;
+        #endregion
 
+        #region Properties
         public Child(string name, double weight, double height, string firstword, string secondword)
         {
             this.Name = name;
@@ -27,14 +30,28 @@ namespace homework6
         }
 
         public double Weight
-        { get { return _Weight; } set { _Weight = value; } }
+        { 
+            get { return _Weight; } 
+            set { _Weight = value; } 
+        }
         public double Height
-        { get { return _Height; } set { _Height = value; } }
+        { 
+            get { return _Height; } 
+            set { _Height = value; } 
+        }
         public string FirstWord
-        { get { return _FirstWord; } set { _FirstWord = value; } }
+        { 
+            get { return _FirstWord; } 
+            set { _FirstWord = value; } 
+        }
         public string SecondWord
-        { get { return _SecondWord; } set { _SecondWord = value; } }
+        { 
+            get { return _SecondWord; } 
+            set { _SecondWord = value; } 
+        }
+        #endregion
 
+        #region Methods
         public override void ShowInfo()
         {
             Console.WriteLine($"{Name} {Lastname}");
@@ -47,5 +64,6 @@ namespace homework6
             Console.WriteLine($"Вес: {Weight}");
             Console.WriteLine($"Рост: {Height}");
         }
+        #endregion
     }
 }

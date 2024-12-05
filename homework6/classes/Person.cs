@@ -5,16 +5,14 @@ namespace homework6
     internal abstract class Person
     {
         #region Fields
-
         private string _Name;
         private string _Lastname;
         private DateTime _BirthDate;
         private static ulong _PassportSeria = 7530;
         private static ulong _PassportNumber = 1;
-
         #endregion
 
-        #region 
+        #region Properties
         public string Name
         {
             get { return _Name; }
@@ -38,7 +36,6 @@ namespace homework6
         {
             get { return _PassportNumber++; }
         }
-
         #endregion
 
         #region Methods
@@ -60,7 +57,6 @@ namespace homework6
             }
             return age;
         }
-
         #endregion
     }
 }

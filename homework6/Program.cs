@@ -13,6 +13,17 @@ namespace homework6
             Console.WriteLine("Нажмите любую клавишу для входа в отсюда...");
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// Реализовать не менее 4 классов:
+        /// Один должен быть абстрактным
+        /// Должно быть не менее 2 наследников
+        /// Не менее 5 методов в каждом классе(необходимо показать свойство на чтение и на чтение-запись)
+        /// Не менее 4 свойств
+        /// Должно быть не менее 2 конструкторов в классах наследниках
+        /// В Main создать объекты классов, показать работу методов.
+        /// </summary>
+        /// <returns>-</returns>
         static void Taska()
         {
             try
@@ -164,10 +175,11 @@ namespace homework6
                             {
                                 Console.WriteLine($"===   {hosp.Name}   ===\n\nПациенты:");
                                 hosp.PrintPatient();
+                                hosp.PrintStaff();
                             }
                             break;
                         default:
-                            Console.WriteLine("Я в ответах ограничен. Правильно читайте ТЗ \n(c)I, Robot (2004)");
+                            Console.WriteLine("Я в ответах ограничен. Правильно читайте ТЗ \n(c)I, Robot (2004)\n");
                             break;
                     }
                 }
@@ -180,6 +192,10 @@ namespace homework6
             }
         }
 
+        /// <summary>
+        /// Принимает информацию о пациентке и её детях
+        /// </summary>
+        /// <returns>Объект типа WIL</returns>
         static WomanInLabor EnterWoman(List<Maternity> mats)
         {
             
@@ -221,7 +237,10 @@ namespace homework6
             return woman;
         }
 
-
+        /// <summary>
+        /// Принимает информацию о ребёнке
+        /// </summary>
+        /// <returns>Объект типа Child</returns>
         static Child EnterChild()
         {
             Console.WriteLine("Имя ребёнка");
@@ -247,7 +266,10 @@ namespace homework6
             return child;
         }
 
-
+        /// <summary>
+        /// Принимает информацию о сотруднике роддома
+        /// </summary>
+        /// <returns>Объект типа MS</returns>
         static MedicalStaff EnterDoctor(List<Maternity> mats)
         {
             Console.WriteLine("Имя: ");
@@ -275,6 +297,11 @@ namespace homework6
 
             return staff;
         }
+
+        /// <summary>
+        /// Принимает информацию о роддоме
+        /// </summary>
+        /// <returns>Объект типа Maternity</returns>
         static void AddMaternity(List<Maternity> mats)
         {
             string name = $"{mats.Count + 1} роддом РТ";
@@ -293,7 +320,7 @@ namespace homework6
         /// Считывает строку символов с консоли и преобразует ее к целому неотрицательному числу. Ввод продолжается до тех пор, 
         /// пока пользователь не введет число.
         /// </summary>
-        /// <returns>Число типа ulong</returns>
+        /// <returns>Число типа byte</returns>
         static byte EnterByte()
         {
             bool flag = true;
@@ -316,10 +343,9 @@ namespace homework6
         }
 
         /// <summary>
-        /// Считывает строку символов с консоли и преобразует ее к целому неотрицательному числу. Ввод продолжается до тех пор, 
-        /// пока пользователь не введет число.
+        /// Считывает номер рожжома с консоли и проверяет наличие такого номера
         /// </summary>
-        /// <returns>Число типа ulong</returns>
+        /// <returns>Число типа byte</returns>
         static byte EnterMaternity(List<Maternity> materns)
         {
             bool flag = true;
@@ -342,10 +368,10 @@ namespace homework6
         }
 
         /// <summary>
-        /// Считывает строку символов с консоли и преобразует ее к целому неотрицательному числу. Ввод продолжается до тех пор, 
+        /// Считывает строку символов с консоли и преобразует ее к дробному числу. Ввод продолжается до тех пор, 
         /// пока пользователь не введет число.
         /// </summary>
-        /// <returns>Число типа ulong</returns>
+        /// <returns>Число типа double</returns>
         static double EnterDouble()
         {
             bool flag = true;
@@ -371,7 +397,7 @@ namespace homework6
         /// Считывает строку символов с консоли и преобразует ее к целому неотрицательному числу. Ввод продолжается до тех пор, 
         /// пока пользователь не введет число.
         /// </summary>
-        /// <returns>Число типа ulong</returns>
+        /// <returns>Число типа uint</returns>
         static uint EnterUint()
         {
             bool flag = true;
@@ -393,6 +419,10 @@ namespace homework6
             return number;
         }
 
+        /// <summary>
+        /// Принимает информацию о дате рождения и преобразовывает к типу DateTime
+        /// </summary>
+        /// <returns>Объект типа DateTime</returns>
         static DateTime EnterBirth()
         {
             DateTime date = DateTime.Now;

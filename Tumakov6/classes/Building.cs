@@ -4,12 +4,15 @@ namespace Tumakov6
 {
     internal class Building
     {
+        #region Fields
         private static ulong _Number = 1;
         private uint _Height;
         private uint _CountFloors;
         private uint _CountFlats;
         private uint _СountEntrance;
+        #endregion
 
+        #region Properties
         public ulong number
             { get { return _Number++; } 
             set { _Number = value; } }
@@ -25,18 +28,35 @@ namespace Tumakov6
         public uint countEntrance
             { get { return _СountEntrance; } 
             set { _СountEntrance = value; } }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Возвращает высоту этажа
+        /// </summary>
+        /// <returns>Число типа double</returns>
         public double FloorsHeight()
         {
             return (double)height / countFloors;
         }
+
+        /// <summary>
+        /// Возвращает количество квартир в подъезде
+        /// </summary>
+        /// <returns>Число типа double</returns>
         public double FlatsInEntrance()
         {
             return (double)countFlat / countEntrance;
         }
+
+        /// <summary>
+        /// Возвращает количество квартир на этаже
+        /// </summary>
+        /// <returns>Число типа double</returns>
         public double FlatsOnFloor()
         {
             return (double)countFlat / countFloors / countEntrance;
         }
+        #endregion
     }
 }

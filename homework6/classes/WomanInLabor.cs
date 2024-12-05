@@ -5,9 +5,12 @@ namespace homework6
 {
     internal class WomanInLabor : Person
     {
+        #region Fields
         private byte _ChildrenCount;
         private Dictionary<Guid, Child> _Children;
+        #endregion
 
+        #region Properties
         public WomanInLabor(string name, string lastname, byte childcount)
         {
             this.Name = name;
@@ -27,12 +30,13 @@ namespace homework6
             get { return _Children; }
             set { _Children = value; }
         }
+        #endregion
 
+        #region Methods
         public void AddChild(Dictionary<Guid, Child> childs, Child child)
         {
             childs.Add(Guid.NewGuid(), child);
         }
-
 
         public override void ShowInfo()
         {
@@ -45,5 +49,6 @@ namespace homework6
                 Children[child].ShowInfo();
             }
         }
+        #endregion
     }
 }

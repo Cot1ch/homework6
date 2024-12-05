@@ -4,11 +4,15 @@ namespace homework6
 {
     internal class Maternity
     {
+        #region Fields
         private List<string> _Address;
         private string _Name;
         private byte _Capacity;
         private List<WomanInLabor> _Patients;
         private List<MedicalStaff> _Staff;
+        #endregion
+
+        #region Properties
 
         public Maternity(string name, List<string> address, byte capacity, List<WomanInLabor> patients, List<MedicalStaff> staff)
         {
@@ -43,7 +47,9 @@ namespace homework6
             get { return _Staff; } 
             set { _Staff = value; } 
         }
-        
+        #endregion
+
+        #region Methods
         public bool IsFull()
         {
             if (Patients.Count < Capacity)
@@ -78,5 +84,6 @@ namespace homework6
         {
             Staff.Add(staff);
         }
+        #endregion
     }
 }

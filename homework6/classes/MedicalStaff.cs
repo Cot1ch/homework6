@@ -4,10 +4,14 @@ namespace homework6
 {
     internal class MedicalStaff : Person
     {
+        #region Fields
         private string _Profession;
         private uint _Salary;
         private byte _Hospital;
         private uint _WorkExperience;
+        #endregion
+
+        #region Properties
         public MedicalStaff(string name, string lastname, string profession, uint salary, byte hospital, uint work)
         {
             this.Name = name;
@@ -38,7 +42,9 @@ namespace homework6
             get { return _WorkExperience; }
             set { _WorkExperience = value; }
         }
+        #endregion
 
+        #region Methods
         public override void ShowInfo()
         {
             Console.WriteLine($"\n{Name} {Lastname}");
@@ -49,5 +55,6 @@ namespace homework6
             Console.WriteLine($"Зарплата: {_Salary}");
             Console.WriteLine($"Стаж работы: {_WorkExperience}");
         }
+        #endregion
     }
 }
