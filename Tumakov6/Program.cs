@@ -21,7 +21,7 @@ namespace Tumakov6
             account1.number = EnterUlong();
 
             Console.WriteLine("Введите баланс счёта");
-            account1.balance = EnterUlong();
+            account1.balance = EnterDecimal();
 
             Console.WriteLine("Введите тип счёта. \n0 - Текущий, 1 - Сберегательный");
             switch (EnterAccType())
@@ -44,7 +44,7 @@ namespace Tumakov6
             BankAccount2 account21 = new BankAccount2();
 
             Console.WriteLine("Введите баланс счёта");
-            account21.balance = EnterUlong();
+            account21.balance = EnterDecimal();
 
             Console.WriteLine("Введите тип счёта. \n0 - Текущий, 1 - Сберегательный");
             switch (EnterAccType())
@@ -84,6 +84,20 @@ namespace Tumakov6
             Console.WriteLine("Упражнение 7.3\n");
 
             BankAccount3 account3 = new BankAccount3();
+
+            Console.WriteLine("Введите баланс счёта");
+            account3.balance = EnterDecimal();
+
+            Console.WriteLine("Введите тип счёта. \n0 - Текущий, 1 - Сберегательный");
+            switch (EnterAccType())
+            {
+                case 0:
+                    account3.account = Account.Текущий;
+                    break;
+                case 1:
+                    account3.account = Account.Сберегательный;
+                    break;
+            }
             account3.PrintInfo();
 
             Console.WriteLine("Выберите операцию:\nСнять деньги со счёта\nПоложить деньги на счёт");
@@ -96,7 +110,7 @@ namespace Tumakov6
                     bool flag = true;
                     do
                     {
-                        ulong summa = EnterUlong();
+                        decimal summa = EnterDecimal();
                         if (account3.Remove(summa))
                         {
                             Console.WriteLine("Сумма успешно снята");
@@ -114,7 +128,7 @@ namespace Tumakov6
                 else if (input.StartsWith("поло"))
                 {
                     Console.WriteLine("Введите сумму");
-                    ulong summ = EnterUlong();
+                    decimal summ = EnterDecimal();
                     account3.Put(summ);
                     flag2 = false;
                 }
@@ -206,6 +220,31 @@ namespace Tumakov6
             do
             {
                 bool isNumber = ulong.TryParse(Console.ReadLine(), out number);
+                if (isNumber)
+                {
+                    flag = false;
+                }
+                else
+                {
+                    Console.WriteLine("Неверный ввод - необходимо ввести неотрицательное целое число");
+                }
+            }
+            while (flag);
+
+            return number;
+        }
+        /// <summary>
+        /// Считывает строку символов с консоли и преобразует ее к целому неотрицательному числу. Ввод продолжается до тех пор, 
+        /// пока пользователь не введет число.
+        /// </summary>
+        /// <returns>Число типа ulong</returns>
+        static decimal EnterDecimal()
+        {
+            bool flag = true;
+            decimal number;
+            do
+            {
+                bool isNumber = decimal.TryParse(Console.ReadLine(), out number);
                 if (isNumber)
                 {
                     flag = false;

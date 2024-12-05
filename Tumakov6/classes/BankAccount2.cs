@@ -5,14 +5,14 @@ namespace Tumakov6
     internal class BankAccount2
     {
         private static ulong _Number = 0;
-        private ulong _Balance;
+        private decimal _Balance;
         private Account _account;
         
 
         public ulong number
         { get { return _Number++; } }
         
-        public ulong balance
+        public decimal balance
         {
             get { return _Balance; }
             set { _Balance = value; }

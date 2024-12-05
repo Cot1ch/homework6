@@ -4,22 +4,27 @@ namespace Tumakov6
 {
     internal class Building
     {
-        private static ulong _Number = 0;
+        private static ulong _Number = 1;
         private uint _Height;
         private uint _CountFloors;
         private uint _CountFlats;
         private uint _СountEntrance;
 
         public ulong number
-            { get { return _Number++; } set { _Number = value; } }
+            { get { return _Number++; } 
+            set { _Number = value; } }
         public uint height 
-            { get { return _Height; } set { _Height = value; } }
+            { get { return _Height; } 
+            set { _Height = value; } }
         public uint countFloors
-            { get { return _CountFloors; } set { _CountFloors = value; } }
+            { get { return _CountFloors; } 
+            set { _CountFloors = value; } }
         public uint countFlat
-            { get { return _CountFlats; } set { _CountFlats = value; } }
+            { get { return _CountFlats; } 
+            set { _CountFlats = value; } }
         public uint countEntrance
-            { get { return _СountEntrance; } set { _СountEntrance = value; } }
+            { get { return _СountEntrance; } 
+            set { _СountEntrance = value; } }
 
         public double FloorsHeight()
         {
@@ -33,6 +38,5 @@ namespace Tumakov6
         {
             return (double)countFlat / countFloors / countEntrance;
         }
-
     }
 }

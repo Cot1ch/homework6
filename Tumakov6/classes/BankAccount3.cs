@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace Tumakov6
 {
     internal class BankAccount3
     {
         private static ulong _Number = 0;
-        private ulong _Balance;
+        private decimal _Balance;
         private Account _account;
 
 
         public ulong number
         { get { return _Number++; } }
 
-        public ulong balance
+        public decimal balance
         {
             get { return _Balance; }
             set { _Balance = value; }
@@ -26,12 +27,12 @@ namespace Tumakov6
         {
             Console.WriteLine($"Номер счёта: {number}, баланс: {balance}, тип: {account}");
         }
-        public void Put(ulong moneyy)
+        public void Put(decimal moneyy)
         {
             _Balance += moneyy;
             Console.WriteLine("Сумма успешно положена");
         }
-        public bool Remove(ulong moneyy)
+        public bool Remove(decimal moneyy)
         {
             if (moneyy <= _Balance)
             {

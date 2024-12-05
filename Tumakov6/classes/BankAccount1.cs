@@ -5,7 +5,7 @@ namespace Tumakov6
     internal class BankAccount1
     {
         private ulong _Number;
-        private ulong _Balance;
+        private decimal _Balance;
         private Account _account;
 
         public ulong number
@@ -13,7 +13,7 @@ namespace Tumakov6
             get { return _Number; }
             set { _Number = value; }
         }
-        public ulong balance
+        public decimal balance
             {
             get { return _Balance; }
             set { _Balance = value; }
